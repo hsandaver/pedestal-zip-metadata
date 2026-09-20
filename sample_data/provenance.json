@@ -1,0 +1,112 @@
+{
+  "provenance": "Generated ZIP packaging of actual user-supplied local files, not synthetic or externally retrieved data.",
+  "source_folder": "/Users/hsandaver/Downloads/Wire nails ABP-HBM-3.405",
+  "archive": "Wire nails ABP-HBM-3.405.zip",
+  "archive_sha256": "5d9c84ebc656ad362d63ac382ebecdd176f81f77aa24db79267d15eab591921d",
+  "files": {
+    "3_405_A_high.jpg": {
+      "size_bytes": 936218,
+      "sha256": "9063633960e0ef92050e2183c3b725754c2cba9740fa7a11dabcbe5435ad7935"
+    },
+    "3_405_A_low.jpg": {
+      "size_bytes": 1288986,
+      "sha256": "d38232449cc4a3869ac9a4457f061441a7c3ee46d01b2a0d64bd1738ce4529c2"
+    },
+    "3_405_A_medium.jpg": {
+      "size_bytes": 1261274,
+      "sha256": "b44fc82970f587dbcd5a9f3d96fee7c05e346dacd903773783372c8abb1a5f23"
+    },
+    "3_405_B_high.jpg": {
+      "size_bytes": 1496580,
+      "sha256": "34a31f8e89614b1c37aa954c5e9aae5bc3e7d4605c3a92a1fae6bb262f28e4ff"
+    },
+    "3_405_B_low.jpg": {
+      "size_bytes": 1411947,
+      "sha256": "37b1b01958a1fa62adf51ff1af6c9de86e757a5a4ba6d32da057a4e553c5b464"
+    },
+    "3_405_B_medium.jpg": {
+      "size_bytes": 1424679,
+      "sha256": "a3334c8d23f1281be5e00844e715e6b267b041b260f02061af6c30a7a2144da2"
+    },
+    "3_405_C_high.jpg": {
+      "size_bytes": 1594084,
+      "sha256": "7c64a397fedf15704e323fbf10aa2fc28ac39ae97edf0a409b0036e9deeb2d9c"
+    },
+    "3_405_C_low.jpg": {
+      "size_bytes": 1501349,
+      "sha256": "18627568811f1c7577496174c87f86f7ba68ea1bead550cd0123d68cfa580a25"
+    },
+    "3_405_C_medium.jpg": {
+      "size_bytes": 1529441,
+      "sha256": "8ca8a137413381ae2e3a02ddc0b5c3f94d3f0e4685d2840879585c16b4a73e1f"
+    },
+    "3_405_D_high.jpg": {
+      "size_bytes": 1617396,
+      "sha256": "3647954c1c20cb0953c33b5caea21d832768145684b59752b0c8eb28ef67a10a"
+    },
+    "3_405_D_low.jpg": {
+      "size_bytes": 1609608,
+      "sha256": "47b2b14305c0de7efb53e3b341739cdf91433825667fd997e8b7ec4039ea51e5"
+    },
+    "3_405_D_medium.jpg": {
+      "size_bytes": 1623781,
+      "sha256": "e59f9c1961c43d25120fc77be0cdd5ed55bfcf2991b694c5d7db885f6639093d"
+    },
+    "3_405_E_high.jpg": {
+      "size_bytes": 1067809,
+      "sha256": "c191b6fd4105598a57689d32d0e443dc85cdd05993f1619c7fc8942c0e1f6129"
+    },
+    "3_405_E_low.jpg": {
+      "size_bytes": 1051697,
+      "sha256": "20973ab7c3ce459fa127ea13103d1af5c02682b86645fb2feda607a75bf65f49"
+    },
+    "3_405_E_medium.jpg": {
+      "size_bytes": 1067809,
+      "sha256": "c191b6fd4105598a57689d32d0e443dc85cdd05993f1619c7fc8942c0e1f6129"
+    },
+    "3_405_F_high.jpg": {
+      "size_bytes": 854943,
+      "sha256": "fe34ea171a9e583bad78f87a565fe442758fe356aba5582632d6df32b09ff770"
+    },
+    "3_405_F_low.jpg": {
+      "size_bytes": 1031972,
+      "sha256": "4bf13725d48aa68058672c3c6a17b05991e037f1be34509eecd7668d7191c647"
+    },
+    "3_405_F_medium.jpg": {
+      "size_bytes": 1222340,
+      "sha256": "de0d02f7e56c5f67ff01bdda30e1d26da81b5f7890b080b767b598615d73712d"
+    },
+    "3_405_combined_highV2.obj": {
+      "size_bytes": 90296383,
+      "sha256": "fd126f390680ea487d009db57f94ea637a4b2f9b3fba309e4cc75b5912a76992"
+    },
+    "3_405_combined_highV2.obj.mtl": {
+      "size_bytes": 1109,
+      "sha256": "e7bb11ae38eab47cdeff6aa6f42f9931ff1a07bbf3363749186364a50dd923ad"
+    },
+    "3_405_combined_low.obj": {
+      "size_bytes": 18511662,
+      "sha256": "a8e6afa16ef225c64015a5c5516c755100a186fb8b9017fe4409d7f5776bdbc2"
+    },
+    "3_405_combined_lowV2.obj": {
+      "size_bytes": 28104745,
+      "sha256": "6e95b38dc94762d27b331278bc0d21747e721d2f16320ce96ce29d0d03c939ab"
+    },
+    "3_405_combined_lowV2.obj.mtl": {
+      "size_bytes": 1103,
+      "sha256": "7a9faa5398a9c6d43b30715eae49bc08ff7b94820fa9360b73798b8504035d7a"
+    },
+    "3_405_combined_mediumV2.obj": {
+      "size_bytes": 63522244,
+      "sha256": "1160a5a3211a6a4bbef0581f92fb98ebcec0e2a5d887149991d53576e0fb60d1"
+    },
+    "3_405_combined_mediumV2.obj.mtl": {
+      "size_bytes": 1121,
+      "sha256": "00379f84090492e916f2ac2bf71db053fab6bd3854ebfe06785c106cffb13376"
+    },
+    "Wire nails ABP-HBM-3.405-10-09-2026.txt": {
+      "size_bytes": 1339,
+      "sha256": "0d4ac9151158d2d832116d695e7fb0176d17d99857beee9dae0b875cea8e80c2"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source_workbook": "ABP-3D-CSV-URLs-and-filenames-deduplicated.xlsx",
+  "source_sha256": "7f6c2d30293d8e5bdfff869cdeb434b529910e268a0ff6a0c11cc5cdeba2cd1f",
+  "sheet": "Sheet1",
+  "range": "A1:K1",
+  "columns": [
+    "DA Filename",
+    "DA Primary Title",
+    "DA Number",
+    "DA Rights Notes",
+    "DA Responsible Unit",
+    "DA Legacy Location",
+    "attribution_instruction",
+    "DA Asset Description",
+    "DA Note",
+    "historical_date_text",
+    "DA Associated Entities"
+  ]
+}
