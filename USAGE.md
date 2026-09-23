@@ -125,7 +125,7 @@ The download timestamp is not a digitisation date. The tool leaves `digitizer` a
 
 ## Preparing records for Acquia DAM
 
-The Acquia DAM CSV follows the exact 11-column schema in your supplied ABP workbook. [The field mapping](ACQUIA_SCHEMA.md) lists each source field. The export uses each uploaded ZIP's actual filename and metadata values. Missing metadata stays blank, and duplicate records remain available for review. Asset uploads and imports happen separately; the app does not connect to Acquia DAM.
+The Acquia DAM CSV follows the 11-column schema in your supplied ABP workbook, with `DA Filename` renamed to `Filename`. [The field mapping](ACQUIA_SCHEMA.md) lists each source field. The export uses each uploaded ZIP's actual filename and metadata values. Missing metadata stays blank, and duplicate records remain available for review. Asset uploads and imports happen separately; the app does not connect to Acquia DAM.
 
 ## Troubleshooting
 

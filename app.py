@@ -2,7 +2,7 @@
 import pandas as pd
 import streamlit as st
 from pedestal import process
-from exports import export_files, acquia_rows, SCHEMAS, ACQUIA_FIELDS, EXPORT_NAMES
+from exports import export_files, acquia_rows, SCHEMAS, ACQUIA_FIELDS, EXPORT_NAMES, csv_bytes
 
 st.set_page_config(page_title='Pedestal metadata', layout='wide')
 st.title('Pedestal metadata')
@@ -26,7 +26,9 @@ if st.button('Process ZIPs', key='process', type='primary'):
 
 if 'result' in st.session_state:
     result = st.session_state['result']
-    if set(st.session_state.get('exports', {})) != EXPORT_NAMES:
+    cached_exports = st.session_state.get('exports', {})
+    if (set(cached_exports) != EXPORT_NAMES
+            or not cached_exports.get('acquia_dam_metadata.csv', b'').startswith(csv_bytes([], ACQUIA_FIELDS))):
         st.session_state['exports'] = export_files(result)
     files = st.session_state['exports']
     st.subheader('Results')
@@ -47,7 +49,7 @@ if 'result' in st.session_state:
     st.download_button('Download Acquia DAM CSV', data=files['acquia_dam_metadata.csv'],
                        file_name='acquia_dam_metadata.csv', mime='text/csv',
                        key='download_acquia_dam_metadata.csv', type='primary')
-    st.caption('Matches the supplied column names and order. Missing metadata stays blank. Review issues before importing.')
+    st.caption('Uses the supplied column order, with the filename column named Filename. Missing metadata stays blank. Review issues before importing.')
     st.download_button('Download all reports (.zip)', data=files['output.zip'],
                        file_name='pedestal_metadata_reports.zip', mime='application/zip',
                        key='download_output.zip')

@@ -48,7 +48,7 @@ This is a local tool, not a hosted service. ZIP uploads go to the local Streamli
 
 | File | Content |
 | --- | --- |
-| `acquia_dam_metadata.csv` | The 11 columns from the supplied ABP workbook, in their original order |
+| `acquia_dam_metadata.csv` | The 11 columns from the supplied ABP workbook, with `DA Filename` renamed to `Filename`, in their original order |
 | `catalogue.csv` | One row per recognized metadata document, including full `raw_metadata_text` |
 | `variants.csv` | One row per accepted 3D model, associated object ID, filename quality label, material references, textures, missing dependencies, scan status |
 | `manifest.csv` | Every file member encountered within the member-count bound, including rejected members and duplicate archive names |
@@ -88,7 +88,7 @@ High, medium, and low are **filename labels only**, not measurements of polygon 
 
 ### Acquia DAM
 
-The `acquia_dam_metadata.csv` export matches `Sheet1!A1:K1` in the supplied `ABP-3D-CSV-URLs-and-filenames-deduplicated.xlsx`. Column names and order are preserved, including `attribution_instruction` and `historical_date_text`. See [the field mapping](ACQUIA_SCHEMA.md). Each recognized metadata document produces one row. Missing values stay blank; original metadata values are not replaced with the workbook examples. No asset upload or live DAM validation is performed.
+The `acquia_dam_metadata.csv` export is based on `Sheet1!A1:K1` in the supplied `ABP-3D-CSV-URLs-and-filenames-deduplicated.xlsx`. The `DA Filename` column is exported as `Filename`. Other column names and their order are preserved, including `attribution_instruction` and `historical_date_text`. See [the field mapping](ACQUIA_SCHEMA.md). Each recognized metadata document produces one row. Missing values stay blank; original metadata values are not replaced with the workbook examples. No asset upload or live DAM validation is performed.
 
 ## Safety bounds
 

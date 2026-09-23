@@ -36,7 +36,7 @@ class ExportTests(unittest.TestCase):
                 reader = csv.DictReader(f)
                 self.assertEqual(reader.fieldnames, json.loads((PROJECT/'sample_data/acquia_schema.json').read_text())['columns'])
                 mapped = next(reader)
-            self.assertEqual(mapped['DA Filename'], 'sample.zip')
+            self.assertEqual(mapped['Filename'], 'sample.zip')
             self.assertEqual(mapped['DA Primary Title'], "'=SUM(1,2)")
             self.assertEqual(mapped['DA Rights Notes'], 'original unknown version')
             self.assertEqual(mapped['DA Responsible Unit'], 'Émile')
@@ -60,7 +60,7 @@ class ExportTests(unittest.TestCase):
         result = pedestal.process([('actual archive.zip', zipped([('metadata.txt', raw.encode())]))])
         before = json.dumps(result)
         expected = {
-            'DA Filename': 'actual archive.zip',
+            'Filename': 'actual archive.zip',
             'DA Primary Title': 'An object ABP-HBM-1.23',
             'DA Number': 'ABP-HBM-1.23',
             'DA Rights Notes': 'Original licence wording',
@@ -87,8 +87,8 @@ class ExportTests(unittest.TestCase):
             {}, {},
         ]}
         rows = acquia_rows(result)
-        self.assertEqual([r['DA Filename'] for r in rows], ['my actual name.zip', 'other.zip', 'extracted object', '', ''])
-        self.assertTrue(all(value == '' for row in rows for key, value in row.items() if key != 'DA Filename'))
+        self.assertEqual([r['Filename'] for r in rows], ['my actual name.zip', 'other.zip', 'extracted object', '', ''])
+        self.assertTrue(all(value == '' for row in rows for key, value in row.items() if key != 'Filename'))
         empty = {key: [] for key in ('catalogue', 'variants', 'manifest', 'issues')}
         reader = csv.DictReader(io.StringIO(export_files(empty)['acquia_dam_metadata.csv'].decode('utf-8-sig')))
         self.assertEqual(reader.fieldnames, list(rows[0]))

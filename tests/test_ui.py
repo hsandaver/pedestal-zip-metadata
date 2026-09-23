@@ -30,7 +30,7 @@ class UITests(unittest.TestCase):
         self.assertEqual(downloads[0].proto.label, 'Download Acquia DAM CSV')
         headers = json.loads((PROJECT / 'sample_data/acquia_schema.json').read_text())['columns']
         self.assertEqual(list(at.dataframe[0].value.columns), headers)
-        self.assertEqual(at.dataframe[0].value.iloc[0]['DA Filename'], SAMPLE.name)
+        self.assertEqual(at.dataframe[0].value.iloc[0]['Filename'], SAMPLE.name)
         result = at.session_state['result']
         self.assertEqual(result['catalogue'][0]['catalogue_id'], 'ABP-HBM-3.405')
         with zipfile.ZipFile(SAMPLE) as source:
@@ -47,6 +47,17 @@ class UITests(unittest.TestCase):
         # Download reruns retain results without rereading sources.
         at.run()
         self.assertEqual(len(at.dataframe), 5)
+        # A running session refreshes cached CSV headers and the ZIP after a rename.
+        old_exports = dict(files)
+        old_exports['acquia_dam_metadata.csv'] = files['acquia_dam_metadata.csv'].replace(
+            b'"Filename"', b'"DA Filename"', 1)
+        old_exports['output.zip'] = b'old bundle'
+        at.session_state['exports'] = old_exports
+        at.run()
+        refreshed = at.session_state['exports']
+        self.assertEqual(refreshed['acquia_dam_metadata.csv'], files['acquia_dam_metadata.csv'])
+        with zipfile.ZipFile(io.BytesIO(refreshed['output.zip'])) as z:
+            self.assertEqual(z.read('acquia_dam_metadata.csv'), files['acquia_dam_metadata.csv'])
         # A running session upgrades earlier report bundles after an app reload.
         at.session_state['exports'] = {'obsolete_template.csv': b'old export'}
         del at.session_state['processed_names']

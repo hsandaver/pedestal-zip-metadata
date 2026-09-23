@@ -13,9 +13,9 @@ SCHEMAS = {
 }
 
 # Sheet1!A1:K1 in ABP-3D-CSV-URLs-and-filenames-deduplicated.xlsx.
-# Preserve the supplied field names and order, including the two lowercase names.
+# Preserve the supplied field order, with DA Filename renamed to Filename.
 ACQUIA_FIELDS = {
-    'DA Filename': 'source_name',
+    'Filename': 'source_name',
     'DA Primary Title': 'title',
     'DA Number': 'catalogue_id',
     'DA Rights Notes': 'license',
@@ -38,8 +38,8 @@ def acquia_rows(result):
     for record in result['catalogue']:
         row = {column: record.get(field, '') for column, field in ACQUIA_FIELDS.items()}
         # Browser uploads are basenames; CLI paths may include parent directories.
-        name = row['DA Filename'] or ''
-        row['DA Filename'] = PurePosixPath(name.replace('\\', '/')).name if name else ''
+        name = row['Filename'] or ''
+        row['Filename'] = PurePosixPath(name.replace('\\', '/')).name if name else ''
         rows.append(row)
     return rows
 
